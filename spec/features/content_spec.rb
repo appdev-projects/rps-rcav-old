@@ -1,191 +1,53 @@
 require "rails_helper"
 
-describe "/" do
-  it "has a top-level heading", points: 1 do
+describe "root URL" do
+  it "has a functional RCAV", points: 5 do
     visit "/"
 
-    expect(page).to have_selector("h1", text: /Welcome/i)
+    expect(page.status_code).to be(200)
   end
 end
 
-describe "/" do
-  it "has an unordered list with three items", points: 1 do
-    visit "/"
-
-    expect(page).to have_tag("ul") do
-      with_tag("li", count: 3)
-    end
-  end
-end
-
-describe "/" do
-  it "has a link to Wikipedia", points: 1 do
-    visit "/"
-
-    expect(page).to have_link("Wikipedia", href: "https://en.wikipedia.org/wiki/Rock–paper–scissors")
-  end
-end
-
-describe "/" do
-  it "has some paragraphs", points: 1 do
-    visit "/"
-
-    expect(page).to have_selector("p", minimum: 3)
-  end
-end
-
-describe "/" do
-  it "has a table", points: 1 do
-    visit "/"
-
-    expect(page).to have_selector("table")
-  end
-end
-
-describe "/" do
-  it "has a working link to play rock" do
+describe "root URL" do
+  it "has a link to play rock", points: 2 do
     visit "/"
 
     click_on "Play Rock"
 
-    expect(page).to have_content("We played rock!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page).to have_current_path("/rock")
   end
 end
 
-describe "/" do
-  it "has a working link to play paper" do
+describe "root URL" do
+  it "has a link to play paper", points: 2 do
     visit "/"
 
     click_on "Play Paper"
 
-    expect(page).to have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page).to have_current_path("/paper")
   end
 end
 
-describe "/" do
-  it "has a working link to play scissors" do
+describe "root URL" do
+  it "has a link to play scissors", points: 2 do
     visit "/"
 
     click_on "Play Scissors"
 
-    expect(page).to have_content("We played scissors!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
-  end
-end
-
-describe "/" do
-  it "has a table with five rows", points: 1 do
-    visit "/"
-
-    expect(page).to have_tag("table") do
-      with_tag("tr", count: 5)
-    end
-  end
-end
-
-describe "/" do
-  it "has a table with the correct number of cells in the first row" do
-    visit "/"
-
-    expect(page).to have_tag("table") do
-      with_tag("tr:first-child") do
-        with_tag("td", count: 2)
-      end
-    end
-  end
-end
-
-describe "/" do
-  it "has a table with the first row's cells sized correctly" do
-    visit "/"
-
-    expect(page).to have_tag("table") do
-      with_tag("tr:first-child") do
-        with_tag("td[colspan='2']")
-
-        with_tag("td[colspan='3']")
-      end
-    end
-  end
-end
-
-describe "/" do
-  it "has a table with the correct number of cells in the second row" do
-    visit "/"
-
-    expect(page).to have_tag("table") do
-      with_tag("tr:first-child") do
-        with_tag("td[rowspan='2']")
-      end
-
-      with_tag("tr:nth-child(2)") do
-        with_tag("td", count: 3)
-      end
-    end
-  end
-end
-
-describe "/" do
-  it "has a table with the correct number of cells in the third row" do
-    visit "/"
-
-    expect(page).to have_tag("table") do
-      with_tag("tr:nth-child(3)") do
-        with_tag("td", count: 5)
-      end
-    end
-  end
-end
-
-describe "/" do
-  it "has a table with the correct number of cells in the fourth row" do
-    visit "/"
-
-    expect(page).to have_tag("table") do
-      with_tag("tr:nth-child(3)") do
-        with_tag("td[rowspan='3']")
-      end
-
-      with_tag("tr:nth-child(4)") do
-        with_tag("td", count: 4)
-      end
-    end
-  end
-end
-
-describe "/" do
-  it "has a table with the correct number of cells in the fifth row" do
-    visit "/"
-
-    expect(page).to have_tag("table") do
-      with_tag("tr:nth-child(3)") do
-        with_tag("td[rowspan='3']")
-      end
-
-      with_tag("tr:nth-child(5)") do
-        with_tag("td", count: 4)
-      end
-    end
+    expect(page).to have_current_path("/scissors")
   end
 end
 
 describe "/rock" do
-  it "has the correct content" do
+  it "has a functional RCAV", points: 4 do
     visit "/rock"
 
-    expect(page).to have_content("We played rock!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page.status_code).to be(200)
   end
 end
 
 describe "/rock" do
-  it "has a link to the homepage", points: 1 do
+  it "has a link to the homepage", points: 2 do
     visit "/rock"
 
     click_on "Rules"
@@ -194,49 +56,96 @@ describe "/rock" do
   end
 end
 
-describe "/rock" do
-  it "has a working link to play rock" do
+describe "/rock", points: 1 do
+  it "has a link to play rock" do
     visit "/rock"
 
     click_on "Play Rock"
 
-    expect(page).to have_content("We played rock!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page).to have_current_path("/rock")
   end
 end
 
-describe "/rock" do
-  it "has a working link to play paper" do
+describe "/rock", points: 1 do
+  it "has a link to play paper" do
     visit "/rock"
 
     click_on "Play Paper"
 
-    expect(page).to have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page).to have_current_path("/paper")
   end
 end
 
-describe "/rock" do
-  it "has a working link to play scissors" do
+describe "/rock", points: 1 do
+  it "has a link to play scissors" do
     visit "/rock"
 
     click_on "Play Scissors"
 
-    expect(page).to have_content("We played scissors!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
+    expect(page).to have_current_path("/scissors")
+  end
+end
+
+describe "/rock", points: 10 do
+  it "has a random computer move", points: 10, hint: h("randomness") do
+    computer_played_rock = 0
+    computer_played_paper = 0
+    computer_played_scissors = 0
+
+    15.times do
+      visit "/rock"
+
+      if (page.has_content?("They played rock!") &&
+        page.has_no_content?("They played paper!") &&
+        page.has_no_content?("They played scissors!"))
+
+        computer_played_rock = computer_played_rock + 1
+      end
+
+      if (page.has_content?("They played paper!") &&
+        page.has_no_content?("They played rock!") &&
+        page.has_no_content?("They played scissors!"))
+
+        computer_played_paper = computer_played_paper + 1
+      end
+
+      if (page.has_content?("They played scissors!") &&
+        page.has_no_content?("They played rock!") &&
+        page.has_no_content?("They played paper!"))
+
+        computer_played_scissors = computer_played_scissors + 1
+      end
+    end
+
+    expect(computer_played_rock).to_not eq(0)
+    expect(computer_played_paper).to_not eq(0)
+    expect(computer_played_scissors).to_not eq(0)
+  end
+end
+
+describe "/rock", points: 15 do
+  it "displays the correct outcome" do
+    visit "/rock"
+
+    if page.has_content?("They played rock!")
+      expect(page).to have_content("We tied!")
+    end
+
+    if page.has_content?("They played paper!")
+      expect(page).to have_content("We lost!")
+    end
+
+    if page.has_content?("They played scissors!")
+      expect(page).to have_content("We won!")
+    end
   end
 end
 
 describe "/paper" do
-  it "has the correct content" do
+  it "has a functional RCAV", points: 3 do
     visit "/paper"
 
-    expect(page).to have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page.status_code).to be(200)
   end
 end
 
@@ -251,49 +160,95 @@ describe "/paper" do
 end
 
 describe "/paper" do
-  it "has a working link to play rock" do
+  it "has a link to play rock", points: 1 do
     visit "/paper"
 
     click_on "Play Rock"
 
-    expect(page).to have_content("We played rock!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page).to have_current_path("/rock")
   end
 end
 
 describe "/paper" do
-  it "has a working link to play paper" do
+  it "has a link to play paper", points: 1 do
     visit "/paper"
 
     click_on "Play Paper"
 
-    expect(page).to have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page).to have_current_path("/paper")
   end
 end
 
-
 describe "/paper" do
-  it "has a working link to play scissors" do
+  it "has a link to play scissors", points: 1 do
     visit "/paper"
 
     click_on "Play Scissors"
 
-    expect(page).to have_content("We played scissors!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
+    expect(page).to have_current_path("/scissors")
+  end
+end
+
+describe "/paper" do
+  it "has a random computer move", points: 8, hint: h("randomness") do
+    computer_played_rock = 0
+    computer_played_paper = 0
+    computer_played_scissors = 0
+
+    15.times do
+      visit "/paper"
+
+      if (page.has_content?("They played rock!") &&
+        page.has_no_content?("They played paper!") &&
+        page.has_no_content?("They played scissors!"))
+
+        computer_played_rock = computer_played_rock + 1
+      end
+
+      if (page.has_content?("They played paper!") &&
+        page.has_no_content?("They played rock!") &&
+        page.has_no_content?("They played scissors!"))
+
+        computer_played_paper = computer_played_paper + 1
+      end
+
+      if (page.has_content?("They played scissors!") &&
+        page.has_no_content?("They played rock!") &&
+        page.has_no_content?("They played paper!"))
+
+        computer_played_scissors = computer_played_scissors + 1
+      end
+    end
+
+    expect(computer_played_rock).to_not eq(0)
+    expect(computer_played_paper).to_not eq(0)
+    expect(computer_played_scissors).to_not eq(0)
+  end
+end
+
+describe "/paper" do
+  it "displays the correct outcome", points: 12 do
+    visit "/paper"
+
+    if page.has_content?("They played rock!")
+      expect(page).to have_content("We won!")
+    end
+
+    if page.has_content?("They played paper!")
+      expect(page).to have_content("We tied!")
+    end
+
+    if page.has_content?("They played scissors!")
+      expect(page).to have_content("We lost!")
+    end
   end
 end
 
 describe "/scissors" do
-  it "has the correct content" do
+  it "has a functional RCAV", points: 2 do
     visit "/scissors"
 
-    expect(page).to have_content("We played scissors!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
+    expect(page.status_code).to be(200)
   end
 end
 
@@ -308,37 +263,86 @@ describe "/scissors" do
 end
 
 describe "/scissors" do
-  it "has a working link to play rock" do
+  it "has a link to play rock", points: 1 do
     visit "/scissors"
 
     click_on "Play Rock"
 
-    expect(page).to have_content("We played rock!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page).to have_current_path("/rock")
   end
 end
 
 describe "/scissors" do
-  it "has a working link to play paper" do
+  it "has a link to play paper", points: 1 do
     visit "/scissors"
 
     click_on "Play Paper"
 
-    expect(page).to have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
-    expect(page).to_not have_content("We played scissors!")
+    expect(page).to have_current_path("/paper")
   end
 end
 
 describe "/scissors" do
-  it "has a working link to play scissors" do
+  it "has a link to play scissors", points: 1 do
     visit "/scissors"
 
     click_on "Play Scissors"
 
-    expect(page).to have_content("We played scissors!")
-    expect(page).to_not have_content("We played paper!")
-    expect(page).to_not have_content("We played rock!")
+    expect(page).to have_current_path("/scissors")
+  end
+end
+
+describe "/scissors" do
+  it "has a random computer move", points: 6, hint: h("randomness") do
+    computer_played_rock = 0
+    computer_played_paper = 0
+    computer_played_scissors = 0
+
+    15.times do
+      visit "/scissors"
+
+      if (page.has_content?("They played rock!") &&
+        page.has_no_content?("They played paper!") &&
+        page.has_no_content?("They played scissors!"))
+
+        computer_played_rock = computer_played_rock + 1
+      end
+
+      if (page.has_content?("They played paper!") &&
+        page.has_no_content?("They played rock!") &&
+        page.has_no_content?("They played scissors!"))
+
+        computer_played_paper = computer_played_paper + 1
+      end
+
+      if (page.has_content?("They played scissors!") &&
+        page.has_no_content?("They played rock!") &&
+        page.has_no_content?("They played paper!"))
+
+        computer_played_scissors = computer_played_scissors + 1
+      end
+    end
+
+    expect(computer_played_rock).to_not eq(0)
+    expect(computer_played_paper).to_not eq(0)
+    expect(computer_played_scissors).to_not eq(0)
+  end
+end
+
+describe "/scissors" do
+  it "displays the correct outcome", points: 9 do
+    visit "/scissors"
+
+    if page.has_content?("They played rock!")
+      expect(page).to have_content("We lost!")
+    end
+
+    if page.has_content?("They played paper!")
+      expect(page).to have_content("We won!")
+    end
+
+    if page.has_content?("They played scissors!")
+      expect(page).to have_content("We tied!")
+    end
   end
 end

@@ -1,5 +1,6 @@
 en:
   hints:
+    randomness: This test deals with randomness. If you think your code is correct but the test failed anyway, you might have just gotten unlucky; try running the test a couple more times.
     copy_must_match: Make sure that the text exactly matches the target, including capitalization.
     button_type: If you're not being sent anywhere when you click submit and you have an attribute `type="button"` on your `<button>` element, try removing it or changing it to `type="submit"`. Also, ensure that the `<button>` is within the `<form></form>`.
     label_for_input: Make sure that you have a `for=""` attribute on each `<label>` and that it matches the `id=""` attribute on the corresponding `<input>`; otherwise our test won't know which input goes with which label (and neither would screen readers, etc).
