@@ -16,9 +16,9 @@ It's different in one crucial way from the [RPS HTML project](http://rps-bs4-fin
 
  1. Clone this project to your workspace.
  1. `cd rps-rcav`
- 1. `bin/setup`
- 1. `bin/server`
- 1. Preview the live application.
+ 1. Set up the project: `bin/setup`
+ 1. Start the web server: `bin/server`
+ 1. Preview -> Preview Running Application
  1. You'll see the "You're on Rails" standard homepage for a new, blank Rails application.
 
 ## Route → Controller → Action → View
