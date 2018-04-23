@@ -30,6 +30,11 @@ Add support for each of the three addresses, `/rock`, `/paper`, and `/scissors`,
  1. Connect the [RCAV dots](https://guides.firstdraft.com/rcav-flowchart.html) and display "Hi!" to prove that you did so. Make up whatever names you want for the controller and action.
  1. Now step back into the action and write some logic to determine whether the player won or lost. Put the computer move and the outcome into output variables.
  1. In the view template, display the output variables. Format it a little with some markup and some copy.
+ 1. Your styling doesn't have to match the target, but **make sure the content and capitalization match exactly**. e.g. use "We played paper!" instead of "we played Paper"
+
+## Submitting
+
+`rails grade:all` when you're ready for feedback/to submit.
 
 ## Stretch Goals
 
