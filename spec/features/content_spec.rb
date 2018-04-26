@@ -9,7 +9,7 @@ describe "root URL" do
 end
 
 describe "root URL" do
-  it "has a link to play rock", points: 2 do
+  it "has a link to play rock", points: 2, hint: h("copy_must_match") do
     visit "/"
 
     click_on "Play Rock"
@@ -19,7 +19,7 @@ describe "root URL" do
 end
 
 describe "root URL" do
-  it "has a link to play paper", points: 2 do
+  it "has a link to play paper", points: 2, hint: h("copy_must_match") do
     visit "/"
 
     click_on "Play Paper"
@@ -29,7 +29,7 @@ describe "root URL" do
 end
 
 describe "root URL" do
-  it "has a link to play scissors", points: 2 do
+  it "has a link to play scissors", points: 2, hint: h("copy_must_match") do
     visit "/"
 
     click_on "Play Scissors"
@@ -47,7 +47,7 @@ describe "/rock" do
 end
 
 describe "/rock" do
-  it "has a link to the homepage", points: 2 do
+  it "has a link to the homepage", points: 2, hint: h("copy_must_match") do
     visit "/rock"
 
     click_on "Rules"
@@ -56,8 +56,8 @@ describe "/rock" do
   end
 end
 
-describe "/rock", points: 1 do
-  it "has a link to play rock" do
+describe "/rock" do
+  it "has a link to play rock", points: 1, hint: h("copy_must_match") do
     visit "/rock"
 
     click_on "Play Rock"
@@ -66,8 +66,8 @@ describe "/rock", points: 1 do
   end
 end
 
-describe "/rock", points: 1 do
-  it "has a link to play paper" do
+describe "/rock" do
+  it "has a link to play paper", points: 1, hint: h("copy_must_match") do
     visit "/rock"
 
     click_on "Play Paper"
@@ -76,8 +76,8 @@ describe "/rock", points: 1 do
   end
 end
 
-describe "/rock", points: 1 do
-  it "has a link to play scissors" do
+describe "/rock" do
+  it "has a link to play scissors", points: 1, hint: h("copy_must_match") do
     visit "/rock"
 
     click_on "Play Scissors"
@@ -86,7 +86,7 @@ describe "/rock", points: 1 do
   end
 end
 
-describe "/rock", points: 10 do
+describe "/rock" do
   it "has a random computer move", points: 10, hint: h("randomness") do
     computer_played_rock = 0
     computer_played_paper = 0
@@ -123,8 +123,8 @@ describe "/rock", points: 10 do
   end
 end
 
-describe "/rock", points: 15 do
-  it "displays the correct outcome" do
+describe "/rock"  do
+  it "displays the correct outcome", points: 15, hint: h("copy_must_match") do
     visit "/rock"
 
     if page.has_content?("They played rock!")
@@ -150,7 +150,7 @@ describe "/paper" do
 end
 
 describe "/paper" do
-  it "has a link to the homepage", points: 1 do
+  it "has a link to the homepage", points: 1, hint: h("copy_must_match") do
     visit "/paper"
 
     click_on "Rules"
@@ -160,7 +160,7 @@ describe "/paper" do
 end
 
 describe "/paper" do
-  it "has a link to play rock", points: 1 do
+  it "has a link to play rock", points: 1, hint: h("copy_must_match") do
     visit "/paper"
 
     click_on "Play Rock"
@@ -170,7 +170,7 @@ describe "/paper" do
 end
 
 describe "/paper" do
-  it "has a link to play paper", points: 1 do
+  it "has a link to play paper", points: 1, hint: h("copy_must_match") do
     visit "/paper"
 
     click_on "Play Paper"
@@ -180,7 +180,7 @@ describe "/paper" do
 end
 
 describe "/paper" do
-  it "has a link to play scissors", points: 1 do
+  it "has a link to play scissors", points: 1, hint: h("copy_must_match") do
     visit "/paper"
 
     click_on "Play Scissors"
@@ -227,7 +227,7 @@ describe "/paper" do
 end
 
 describe "/paper" do
-  it "displays the correct outcome", points: 12 do
+  it "displays the correct outcome", points: 12, hint: h("copy_must_match") do
     visit "/paper"
 
     if page.has_content?("They played rock!")
@@ -253,7 +253,7 @@ describe "/scissors" do
 end
 
 describe "/scissors" do
-  it "has a link to the homepage", points: 1 do
+  it "has a link to the homepage", points: 1, hint: h("copy_must_match") do
     visit "/scissors"
 
     click_on "Rules"
@@ -263,7 +263,7 @@ describe "/scissors" do
 end
 
 describe "/scissors" do
-  it "has a link to play rock", points: 1 do
+  it "has a link to play rock", points: 1, hint: h("copy_must_match") do
     visit "/scissors"
 
     click_on "Play Rock"
@@ -273,7 +273,7 @@ describe "/scissors" do
 end
 
 describe "/scissors" do
-  it "has a link to play paper", points: 1 do
+  it "has a link to play paper", points: 1, hint: h("copy_must_match") do
     visit "/scissors"
 
     click_on "Play Paper"
@@ -283,7 +283,7 @@ describe "/scissors" do
 end
 
 describe "/scissors" do
-  it "has a link to play scissors", points: 1 do
+  it "has a link to play scissors", points: 1, hint: h("copy_must_match") do
     visit "/scissors"
 
     click_on "Play Scissors"
@@ -330,7 +330,7 @@ describe "/scissors" do
 end
 
 describe "/scissors" do
-  it "displays the correct outcome", points: 9 do
+  it "displays the correct outcome", points: 9, hint: h("copy_must_match") do
     visit "/scissors"
 
     if page.has_content?("They played rock!")
