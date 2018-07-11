@@ -14,12 +14,11 @@ It's different in one crucial way from the [RPS HTML project](http://rps-bs4-fin
 
 ## Setup
 
- 1. Clone this project to your workspace.
- 1. `cd rps-rcav`
+ 1. From [your Cloud9 repositories list](https://c9.io/account/repos), set up a workspace [as usual](https://guides.firstdraft.com/starting-on-a-project-in-cloud9).
  1. Set up the project: `bin/setup`
- 1. Start the web server: `bin/server`
- 1. Preview -> Preview Running Application
- 1. You'll see the "You're on Rails" standard homepage for a new, blank Rails application.
+ 1. Start the web server by clicking "Run Project".
+ 1. Navigate to your live application preview.
+ 1. You'll see the standard "You're on Rails" welcome page for a brand new, blank Rails application.
 
 ## Route → Controller → Action → View
 
