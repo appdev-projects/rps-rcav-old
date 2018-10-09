@@ -14,7 +14,9 @@ namespace :project do
     `git checkout -`
     `git rebase upstream/master`
     `rails db:drop`
-    `bin/setup`
+    `rails db:create`
+    `rails db:migrate`
+    `rails dev:prime`
     `git add -A`
     `git commit -m "Updated project from upstream"`
   end
