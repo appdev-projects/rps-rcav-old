@@ -35,7 +35,7 @@ Add support for each of the three addresses, `/rock`, `/paper`, and `/scissors`,
 
 ## Submitting
 
-`rails grade:all` when you're ready for feedback/to submit.
+`rails grade` when you're ready for feedback/to submit.
 
 ## Stretch Goals
 
