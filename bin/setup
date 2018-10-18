@@ -26,6 +26,7 @@ chdir APP_ROOT do
   # end
 
   puts "\n== Preparing database =="
+  system! "rails db:drop"
   system! "rails db:create"
   system! "rails db:migrate"
   system! "rails db:seed"
