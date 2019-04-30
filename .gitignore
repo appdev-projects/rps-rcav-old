@@ -22,6 +22,7 @@
 # Ignore dotenv files
 /.env*
 
+node_modules/
 .rbenv-gemsets
 examples.txt
 grades.yml
