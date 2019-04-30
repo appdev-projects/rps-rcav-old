@@ -61,7 +61,7 @@ group :development do
   gem "draft_generators", github: "firstdraft/draft_generators"
   gem "letter_opener"
   gem "meta_request"
-  gem "draft_log", github: "firstdraft/draft_log"
+  # gem "draft_log", github: "firstdraft/draft_log"
 end
 
 group :test do
