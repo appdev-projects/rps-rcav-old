@@ -65,7 +65,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'capybara', '3.13.0'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'rspec-html-matchers'
