@@ -1,3 +1,8 @@
+Rails.application.routes.append do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+end
+
 ActiveAdmin.setup do |config|
       # If you are using Devise's before_action :authenticate_user!
       #   in your ApplicationController, then uncomment the following:
