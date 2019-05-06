@@ -18,9 +18,8 @@ It's different in one crucial way from the [RPS HTML project](http://rps-bs4-fin
  1. Set up the project: `bin/setup`
  1. Start the web server by clicking "Run Project".
  1. Navigate to your live application preview.
- 1. As you work, remember to navigate to `/git` and **commit often as you work.**
- 1. Make new branches freely to experiment! _Especially_ before starting on a new task.
  1. You'll see the standard "You're on Rails" welcome page for a brand new, blank Rails application.
+ 1. As you work, remember to navigate to `/git` often and **always be committing.**
 
 ## Route → Controller → Action → View
 
@@ -32,28 +31,13 @@ Add support for each of the three addresses, `/rock`, `/paper`, and `/scissors`,
  1. Now step back into the action and write some logic to determine whether the player won or lost. Put the computer move and the outcome into output variables.
  1. In the view template, display the output variables. Format it a little with some markup and some copy.
  1. Your styling doesn't have to match the target, but **make sure the content and capitalization match exactly**. e.g. use "We played paper!" instead of "we played Paper"
+ 1. On each page, add links to get to the other two pages (so that our users don't have to keep typing into the address bar).
 
 ## Submitting
 
 `rails grade` when you're ready for feedback/to submit.
 
-## Stretch Goals
-
-Once you have completed the above for all three addresses,
-
- 1. On each page, add links to get to the other two pages (so that our users don't have to keep typing into the address bar).
-
- 1. Use [BootstrapCDN](https://www.bootstrapcdn.com/) to connect Bootstrap or a Bootswatch.
-
-    You will find the `<head>` of _all_ of our view templates in the file `app/views/layouts/application.html.erb`, which is a wrapper or "layout" that surrounds every view template that we send to our users.
-
-    If you go examine the `application.html.erb` file that we got out-of-the-box when we generated the new application, you'll see that it includes all of the usual HTML boilerplate -- `<!DOCTYPE>`, `<html>`, etc.
-
-    Notice the line that says `<%= yield %>.` That is where the contents of our view templates get plugged in before the entire response gets sent to our users' browsers.
-
-    This is a great way to DRY (Don't Repeat Yourself) up repetitive markup like navbars, footers, links to stylesheets, etc. It's one of _many_ advantages to using a dynamic framework like Rails over writing static HTML.
-
- 1. Use some [Bootstrap classes and components](http://getbootstrap.com/) in your view templates.
+## Extras
 
  1. You can also still add any images that you like to the `public/` folder, and use them as the `src` for `<img>`s.
 
