@@ -129,14 +129,12 @@ describe "/rock"  do
 
     if page.has_content?("They played rock!")
       expect(page).to have_content("We tied!")
-    end
-
-    if page.has_content?("They played paper!")
+    elsif page.has_content?("They played paper!")
       expect(page).to have_content("We lost!")
-    end
-
-    if page.has_content?("They played scissors!")
+    elsif page.has_content?("They played scissors!")
       expect(page).to have_content("We won!")
+    else
+      raise "Could not find computer move. Be sure your copy matches the target exactly"
     end
   end
 end
@@ -232,14 +230,12 @@ describe "/paper" do
 
     if page.has_content?("They played rock!")
       expect(page).to have_content("We won!")
-    end
-
-    if page.has_content?("They played paper!")
+    elsif page.has_content?("They played paper!")
       expect(page).to have_content("We tied!")
-    end
-
-    if page.has_content?("They played scissors!")
+    elsif page.has_content?("They played scissors!")
       expect(page).to have_content("We lost!")
+    else
+      raise "Could not find computer move. Be sure your copy matches the target exactly"
     end
   end
 end
@@ -335,14 +331,12 @@ describe "/scissors" do
 
     if page.has_content?("They played rock!")
       expect(page).to have_content("We lost!")
-    end
-
-    if page.has_content?("They played paper!")
+    elsif page.has_content?("They played paper!")
       expect(page).to have_content("We won!")
-    end
-
-    if page.has_content?("They played scissors!")
+    elsif page.has_content?("They played scissors!")
       expect(page).to have_content("We tied!")
+    else
+      raise "Could not find computer move. Be sure your copy matches the target exactly"
     end
   end
 end
