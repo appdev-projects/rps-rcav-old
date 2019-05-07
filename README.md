@@ -56,5 +56,5 @@ Add support for each of the three addresses, `/rock`, `/paper`, and `/scissors`,
  1. Add a root URL such that visiting the bare domain leads to a landing page with some information about the game. Hint: the first argument of the route will just be the plain slash, like so:
 
     ```ruby
-    get("/", { :controller => "zebra", :action => "giraffe" })
+    match("/", { :controller => "zebra", :action => "giraffe", :via => "get" })
     ```
